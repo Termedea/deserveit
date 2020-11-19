@@ -1,0 +1,24 @@
+{
+    "name": "deserveit",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sass-watch": "node-sass --watch ./assets/scss/ --output-style compressed -o ./app/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Termedea/deserveit.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Termedea/deserveit/issues"
+    },
+    "homepage": "https://github.com/Termedea/deserveit#readme",
+    "devDependencies": {
+        "compile-sass": "^1.1.1",
+        "node-sass": "^5.0.0"
+    }
+}

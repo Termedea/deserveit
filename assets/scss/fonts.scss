@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:wght@400;700&display=swap");
+
+@font-face {
+    font-family: "Georgia";
+    src: url("/app/src/fonts/Georgia.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$logo-font: "Georgia";
+$heading-font: "Merriweather", "Times New Roman", Times, serif;
+$main-font: "Nunito Sans", "Trebuchet MS", Arial, sans-serif;
