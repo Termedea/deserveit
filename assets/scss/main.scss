@@ -1,6 +1,6 @@
-@import "fonts.scss";
-@import "colors.scss";
-@import "sizes.scss";
+@import "./vars/colors.scss";
+@import "./vars/fonts.scss";
+@import "./vars/sizes.scss";
 * {
     box-sizing: border-box;
 }
@@ -27,14 +27,40 @@ h1 {
     font-weight: normal;
     font-family: $logo-font;
     color: $light;
-    margin-left: 2rem;
     font-size: 4.5rem;
+    text-align: center;
+    @media (min-width: 600px) {
+        margin-left: 2rem;
+        text-align: left;
+    }
+}
+h2,
+h3 {
+    font-weight: normal;
+    margin: 0;
 }
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: $accent;
+    @media (min-width: $mid-screen) {
+        font-size: 2rem;
+    }
+    margin-bottom: 1rem;
 }
 h3 {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    @media (min-width: $mid-screen) {
+        font-size: 1.4rem;
+    }
+}
+p {
+    line-height: 1.6rem;
+    margin-top: 0;
+    padding: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
 }
 div.container {
     max-width: 80rem;
@@ -43,18 +69,18 @@ div.container {
     color: $mid-gray;
     font-family: $heading-font;
     background: rgba(white, 0.7);
-    h2,
-    h3 {
-        font-weight: normal;
-        margin: 0;
-    }
     p,
     li {
         font-family: $main-font;
+        color: $mid-gray;
     }
     main {
         max-width: 55rem;
         margin: auto;
+    }
+    ul {
+        padding-left: 3rem;
+        margin-bottom: 3rem;
     }
 }
 div.services {
@@ -62,26 +88,36 @@ div.services {
         margin-bottom: 1.3rem;
     }
     div.content {
-        img {
-            max-width: 400px;
-            max-height: 400px;
-        }
-        p {
-            margin: 0;
-            margin-bottom: 1rem;
-        }
-        ul {
-            margin: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 1rem;
+        @media (min-width: 900px) {
+            gap: 2rem;
+            p:not(.full),
             li {
-                font-size: 1.1rem;
-                margin-bottom: 1.3rem;
+                max-width: 18rem;
+                text-align: justify;
             }
         }
-        display: flex;
-        gap: 2rem;
+        li {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        img {
+            max-width: 350px;
+            max-height: 350px;
+            @media (min-width: $mid-screen) {
+                max-width: 450px;
+                max-height: 450px;
+            }
+        }
     }
     border-bottom: 1px dotted $mid-gray;
     padding: 1.5rem 0;
+    &:first-of-type {
+        padding-top: 0.5rem;
+    }
 }
 nav,
 footer {
@@ -91,10 +127,16 @@ footer {
     ul {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         margin: 0;
 
         li {
-            padding: 1.4em 2em;
+            font-size: 0.9rem;
+            padding: 1.4rem 1rem;
+            @media (min-width: 600px) {
+                font-size: 1.1rem;
+                padding: 1.4em 2em;
+            }
             list-style-type: none;
             cursor: pointer;
             transition: background-color 0.3s ease-in;
@@ -114,4 +156,8 @@ footer {
 }
 footer {
     padding: 1.4em;
+
+    h2 {
+        color: white;
+    }
 }
